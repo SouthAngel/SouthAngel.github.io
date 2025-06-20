@@ -37,6 +37,8 @@ jobs:
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
           packages: hugo
+      - name: Update hugo mod
+        run: hugo mod -u
       - name: Build by hugo
         run: hugo
       - name: Upload artifact
