@@ -28,7 +28,7 @@ menu:
       pageRef: /blog/issue
       weight: 3
     - name: Code
-      pageRef: /blog/code
+      pageRef: /docs/code
       weight: 3
     - name: About
       pageRef: /about
