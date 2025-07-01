@@ -23,4 +23,4 @@ _本站所有内容均采用 [BY-NC-SA](https://creativecommons.org/licenses/by-
 
 文档基于 hugo + Hextra 构建
 
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+For more information, visit [Hextra](https://imfing.github.io/hextra/docs/).
