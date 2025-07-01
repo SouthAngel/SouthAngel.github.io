@@ -18,24 +18,30 @@ markup:
 
 menu:
   main:
+    - name: Home
+      pageRef: /
+      weight: 1
     - name: Docs
       pageRef: /docs
-      weight: 1
+      weight: 2
     - name: Issue
       pageRef: /blog/issue
-      weight: 1
+      weight: 3
+    - name: Code
+      pageRef: /blog/code
+      weight: 3
     - name: About
       pageRef: /about
-      weight: 2
-    - name: Contact ↗
-      url: "https://github.com/SouthAngel"
-      weight: 3
-    - name: Search
       weight: 4
+    - name: Contact ↗
+      pageRef: /mail
+      weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 5
+      weight: 7
       url: "https://github.com/SouthAngel"
       params:
         icon: github
