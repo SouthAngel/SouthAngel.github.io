@@ -11,4 +11,4 @@ title: Maya
 ## Maya 导出的相机进 UE 无法匹配
 原因：UE 没有相机视口遮挡  
 解决：Maya 在导出与拍屏时一定要保证相机的长宽比与渲染设置里是一样的
-![](cam_ratio.png)
+![](cam_ratio.webp)

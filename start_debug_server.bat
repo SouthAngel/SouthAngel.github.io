@@ -1,2 +1,2 @@
-rmdir /Q /S ./public
+@REM rmdir /Q /S ./public
 start "hugo" hugo server
