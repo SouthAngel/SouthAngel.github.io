@@ -20,7 +20,7 @@ Deadline 所有插件只要遵循一定的规则编写并按照特定文件命�
 Simple就是我们通常理解的把不同帧分到不同机器上，差别在于Advanced类型会在不同帧任务之间保持进程不退出，这种好处主要是减少了每次启动时IO的时间，坏处是某些软件内存管理的不好渲大场景容易崩
 
 ### 主py文件
-{{% details title="Plugin.py" closed="true" %}}
+{{% details title="Plugin.py" %}}
 ```python {filename=Plugin.py}
 #coding=utf-8
 #!/usr/bin/env python3
@@ -71,7 +71,7 @@ class PHoudiniPlugin(DeadlinePlugin):
 {{% /details %}}
 
 ### 配置文件
-{{% details title="Plugin.param" closed="true" %}}
+{{% details title="Plugin.param" %}}
 
 ```txt {filename="Plugin.param"}
 [About]

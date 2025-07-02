@@ -6,7 +6,7 @@ toc: false
 Github 建立的个人主页.  
 
 
-_本站所有内容均采用 [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明出处！_
+> _本站所有内容均采用 [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明出处！_
 
 ## 概览
 
