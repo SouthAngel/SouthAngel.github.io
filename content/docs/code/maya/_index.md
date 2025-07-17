@@ -4,18 +4,19 @@
 ```python
 import maya.cmds as cmds
 
-def foo():
+def foo(rebind_materail=False):
     sels = cmds.ls(sl=1)
-    mes = cmds.listRelatives(ad=1,type='mesh')
+    mes = cmds.listRelatives(ad=1,type='mesh',f=1)
     for me in mes:
         lcs = cmds.listConnections(me,s=0,d=1,c=1,p=1)
+        if not lcs : continue
         for i in range(0,len(lcs),2):
-            if 'instObjGroups.objectGroups[' not in lcs[i]: continue
+            if '.instObjGroups' not in lcs[i] : continue
             cmds.disconnectAttr(lcs[i],lcs[i+1])
+        if rebind_materail:
+            cmds.connectAttr('%s.instObjGroups'%(lcs[0].split('.')[0]),'%s.dagSetMembers'%(lcs[1].split('.')[0]),na=1)
         print(lcs)
-    tsh = mes
-    print(tsh)
-foo()
+foo(False)
 ```
 
 #### 找回曲线层级
