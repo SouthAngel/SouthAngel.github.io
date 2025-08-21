@@ -16,10 +16,10 @@ stage.Save()
 ```
 ### Add prim
 ```python
-from pxr import Geom
+from pxr import UsdGeom
 stage.DefinePrim('/root/obj')
 stage.OverridePrim('/root/obj')
-Geom.Xform.Define('/root/obj')
+UsdGeom.Xform.Define(stage,'/root/obj')
 ```
 ### Access stage or prim
 ```python
@@ -31,6 +31,30 @@ obj.GetRelationshipAtPath(path)
 ```
 ### Apply API
 ```python
-from pxr import Usd,Geom
-Geom.ModelAPI.Apply(prim)
+UsdGeom.ModelAPI.Apply(prim)
+```
+### Variants
+```python
+prim = stage.GetPrimAtPath(path)
+vset = prim.GetVariantSets().AddVariantSet('variantSetA')
+vset.SetVariantSelection('A_2')
+with vset.GetVariantEditContext():
+    # change prim content
+    pass
+```
+### Payload
+```python
+stage = Usd.Stage.CreateNew('testout.usd')
+prim = stage.DefinePrim('/root/objA')
+prim.GetPayloads().AddPayload('./ref.usd','/objRef')
+mprim = UsdGeom.ModelAPI.Apply(prim)
+mprim.SetExtentsHint(mprim.ComputeExtentsHint(UsdGeom.BBoxCache(1,[])))
+```
+### Xform animation
+```python
+from pxr import Gf
+xprim = UsdGeom.Xform.Define(stage, objpath)
+op = xprim.AddTranslateOp(opSuffix='Translate')
+op.Set(time=1,value=Gf.Vec3f(1.2,0.2,0.1))
+op.Set(time=10,value=Gf.Vec3f(14.2,12.1,0.1))
 ```
