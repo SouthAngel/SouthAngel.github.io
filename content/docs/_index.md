@@ -3,16 +3,6 @@ title: Documentation
 next: first-page
 ---
 
-This is a demo of the theme's documentation layout.
+收录各种知识点笔记说明.
 
-## Hello, World!
 
-```go {filename="main.go"}
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
