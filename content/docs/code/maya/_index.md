@@ -76,3 +76,8 @@ def foo():
 
 foo()
 ```
+#### Maya file 命令的奇怪用法
+```mel
+file -lr -r "C:/tmp/ref.ma{2}" // load reference
+file -lr refRN "C:/tmp/ref2.ma" // replace reference
+```
