@@ -25,7 +25,7 @@ load 是个偏底层的函数，接受一个读取器函数（类似于迭代器
 载入并执行，参照loadfile，每次调用都会重新加载文件
 ### require
 载入并执行，参照dofile，只执行一次，第二次加载不重复执行
-## lua 调用 C
+## lua 与 C
 lua使用一个状态机对象lua_State与C函数沟通，每次调用函数lua会创建一个虚拟栈，lua解释器通过多次压栈传入不同的参数，同理C也通过压栈方式向解释器传递返回值
 ```C
 #include "stdio.h"
@@ -61,4 +61,22 @@ int luaopen_TestLib(lua_State* L) {
 testlib = require("TestLib")
 outvar = testlib.test_func1("apple","banana")
 print(outvar)
+```
+### C table对象读与存
+```C
+// set
+lua_newtable(L);
+lua_pushstring(L,"color");
+lua_pushstring(L,"red");
+lua_settable(L,-3)
+// todo
+```
+### traceback
+```C
+luaL_traceback(L,L,0,1);
+auto tsz = lua_gettop(L);
+for (int i = 0; i < tsz; i++)
+{
+    std::cerr<<lua_tostring(L,tsz-i)<<std::endl;;
+}
 ```
