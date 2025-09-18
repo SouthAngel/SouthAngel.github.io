@@ -58,3 +58,7 @@ op = xprim.AddTranslateOp(opSuffix='Translate')
 op.Set(time=1,value=Gf.Vec3f(1.2,0.2,0.1))
 op.Set(time=10,value=Gf.Vec3f(14.2,12.1,0.1))
 ```
+### SubLayer
+```python
+layer.subLayerPaths.append(usdpath)
+```
